@@ -37,3 +37,27 @@ CREATE TABLE `line_item` (
 ALTER TABLE `shensang`.`purchase_order` 
 CHANGE COLUMN `tax` `tax` DECIMAL(2,2) NULL DEFAULT 0.05 ;
 ```
+
+
+## Configure Spring Boot App connect to Railway
+1. Make sure pom uses the latest Mysql Connector J driver
+
+```
+<dependency>
+  <groupId>com.mysql</groupId>
+  <artifactId>mysql-connector-j</artifactId>
+  <scope>runtime</scope>
+</dependency>
+```
+2. Make sure the application.properties setup with the following attributes
+
+```
+spring.datasource.url=${MYSQL_APP_URL}
+spring.datasource.username=${MYSQL_APP_USER}
+spring.datasource.password=${MYSQL_APP_PASSWORD}
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+```
+
+3. Configure Railway with the following env variables
+
+![Railway Env Var](/images/railwayenv.png "Railway Env Variable")
