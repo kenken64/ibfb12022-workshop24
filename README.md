@@ -39,7 +39,7 @@ CHANGE COLUMN `tax` `tax` DECIMAL(2,2) NULL DEFAULT 0.05 ;
 ```
 
 
-## Configure Spring Boot App connect to Railway
+## Configure Spring Boot App connect to Railway MySQL
 1. Make sure pom uses the latest Mysql Connector J driver
 
 ```
