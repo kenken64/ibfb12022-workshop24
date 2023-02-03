@@ -38,6 +38,11 @@ ALTER TABLE `shensang`.`purchase_order`
 CHANGE COLUMN `tax` `tax` DECIMAL(2,2) NULL DEFAULT 0.05 ;
 ```
 
+```
+ALTER TABLE `shensang`.`purchase_order`
+CHANGE COLUMN `notes` `notes` TEXT NULL ;
+```
+
 
 ## Configure Spring Boot App connect to Railway MySQL
 1. Make sure pom uses the latest MySQL Connector J driver 
