@@ -40,7 +40,7 @@ CHANGE COLUMN `tax` `tax` DECIMAL(2,2) NULL DEFAULT 0.05 ;
 
 
 ## Configure Spring Boot App connect to Railway MySQL
-1. Make sure pom uses the latest Mysql Connector J driver
+1. Make sure pom uses the latest MySQL Connector J driver 
 
 ```
 <dependency>
@@ -58,6 +58,6 @@ spring.datasource.password=${MYSQL_APP_PASSWORD}
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 ```
 
-3. Configure Railway with the following env variables
+3. Configure Railway App instance with the following env variables
 
 ![Railway Env Var](/images/railwayenv.png "Railway Env Variable")
