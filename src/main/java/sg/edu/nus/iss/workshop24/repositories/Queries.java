@@ -13,4 +13,11 @@ public class Queries {
         order_id, unit_price, discount) values 
         ( ?, ? ,? ,?, ?)
         """;
+        
+    public static final String SQL_COUNT_PO_TABLE_PRED_ORDERID = """
+        select count(*) from line_item where order_id = ?
+            """;
+    public static final String SQL_COUNT_LINEITEM_TABLE_PRED_ORDERID = """
+       select count(*) from line_item where order_id = ?
+        """;
 }

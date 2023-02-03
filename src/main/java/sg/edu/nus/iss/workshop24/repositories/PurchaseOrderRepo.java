@@ -21,4 +21,8 @@ public class PurchaseOrderRepo {
                 ord.getShippingAddress(),
                 ord.getTax() ) > 0;
     }
+
+    public int getPOByOrderId(){
+        return 0; 
+    }
 }

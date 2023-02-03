@@ -15,10 +15,6 @@ public class LineItemRepo {
     @Autowired
     private JdbcTemplate template;
 
-    public void addLineItems(Order ord){
-        
-    }
-
     public void addLineItems(List<LineItem> lineItems, 
         String orderId){
         List<Object[]> arrData =  lineItems.stream()
@@ -34,6 +30,10 @@ public class LineItemRepo {
     
         template.batchUpdate(SQL_INSERT_LINEITEM_TABLE, arrData);
 
+    }
+
+    public int getLineItemsCountByOrderId(){
+        return 0; 
     }
     
 }

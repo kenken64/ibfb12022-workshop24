@@ -12,6 +12,7 @@ import jakarta.servlet.http.HttpSession;
 import sg.edu.nus.iss.workshop24.exception.OrderException;
 import sg.edu.nus.iss.workshop24.models.LineItem;
 import sg.edu.nus.iss.workshop24.models.Order;
+import sg.edu.nus.iss.workshop24.models.OrderResult;
 import sg.edu.nus.iss.workshop24.services.PurchaseOrderService;
 
 @Controller
@@ -26,7 +27,7 @@ public class CheckoutController {
         List<LineItem> lineItems = (List<LineItem>)
                         sess.getAttribute("cart");
         Order ord = (Order)sess.getAttribute("checkoutCart");
-        poSvc.createPurchaseOrder(ord);   
+        OrderResult r = poSvc.createPurchaseOrder(ord);  
         sess.invalidate();
         model.addAttribute("total", lineItems.size());
         return "checkout";
